@@ -1,16 +1,3 @@
-# social_media_clone
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| ![register](https://github.com/user-attachments/assets/f9dd8170-9b30-4cd0-9ac8-5c0cf374f207) | ![login](https://github.com/user-attachments/assets/868d2e03-df95-422b-9de1-6a61d9c20467) |
+| --- | --- |
+| Registracija | Prijava |
