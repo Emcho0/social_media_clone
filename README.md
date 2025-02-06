@@ -1,9 +1,9 @@
 # Sadrzaj
-1. [Primjer_Početne_Strane](#primjer-pocetne-strane)
-2. [Naziv_Društvene_Mreže](#naziv-društvene-mreže)
-3. [Tim_Projekta](#tim-projekta)
+1. [Primjer Početne Strane](#primjer-pocetne-strane)
+2. [Naziv Društvene Mreže](#naziv-društvene-mreže)
+3. [Tim Projekta](#tim-projekta)
 4. [Datumi](#datumi)
-5. [O_Aplikaciji](#o-aplikaciji)
+5. [O Aplikaciji](#o-aplikaciji)
    
 # Primjer Pocetne strane
 | ![register](https://github.com/user-attachments/assets/f9dd8170-9b30-4cd0-9ac8-5c0cf374f207) | ![login](https://github.com/user-attachments/assets/868d2e03-df95-422b-9de1-6a61d9c20467) |
