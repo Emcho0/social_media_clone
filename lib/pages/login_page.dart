@@ -3,10 +3,10 @@ import 'package:social_media_clone/components/button.dart';
 import 'package:social_media_clone/components/text_field.dart';
 
 class LoginPage extends StatefulWidget {
-  // final Function()? onTap;
+  final Function()? onTap;
   const LoginPage({
     super.key,
-    // required this.onTap,
+    required this.onTap,
   });
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 25),
                 // sign in tipka
                 MyButton(
-                  onTap: () {},
+                  onTap: widget.onTap,
                   text: 'Prijavi se',
                 ),
 
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                     Text("Niste član?"),
                     const SizedBox(width: 4),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: widget.onTap,
                       child: const Text(
                         "Registrujte se sada",
                         style: TextStyle(

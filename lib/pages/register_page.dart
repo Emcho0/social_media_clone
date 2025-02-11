@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../components/button.dart';
-import '../components/text_field.dart';
+import 'package:social_media_clone/components/button.dart';
+import 'package:social_media_clone/components/text_field.dart';
 
 class RegisterPage extends StatefulWidget {
-  // final Function()? onTap;
+  final Function()? onTap;
   const RegisterPage({
     super.key,
-    // required this.onTap,
+    required this.onTap,
   });
 
   @override
@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 25),
                 // sign up tipka
                 MyButton(
-                  onTap: () {},
+                  onTap: widget.onTap,
                   text: 'Registruj se',
                 ),
 
@@ -83,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Text("Imate već račun?"),
                     const SizedBox(width: 4),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: widget.onTap,
                       child: const Text(
                         "Prijavite se sada",
                         style: TextStyle(
