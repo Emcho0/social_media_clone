@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:social_media_clone/components/button.dart';
 import 'package:social_media_clone/components/text_field.dart';
@@ -16,6 +17,14 @@ class _LoginPageState extends State<LoginPage> {
   // kontroleri za uredjivanje (unos) teksta
   final emailTextController = TextEditingController();
   final passwordTextController = TextEditingController();
+  // korisnika sign-inovati
+  void signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailTextController.text,
+      password: passwordTextController.text,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 25),
                 // sign in tipka
                 MyButton(
-                  onTap: widget.onTap,
+                  onTap: signIn,
                   text: 'Prijavi se',
                 ),
 

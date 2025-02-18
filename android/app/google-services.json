@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "863673831772",
+    "project_id": "socialtutorial-4ed3d",
+    "storage_bucket": "socialtutorial-4ed3d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863673831772:android:51087222e613f85f047199",
+        "android_client_info": {
+          "package_name": "com.example.social_media_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6FX7117qF182fdC3VShXmJ2rFHhf-esQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
