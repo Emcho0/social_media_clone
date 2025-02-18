@@ -24,7 +24,7 @@ Daris Pružan-Dizajner aplikacije <br>
 6.2.2025-Ažuriranje android studia i pokušaj inicijaliziranja na školskom laptopu, instaliran SDK , pokrenut emulator preko web-a.<br>
 11.2.2025-Daris pomogao Emiru oko autentifikacije za login(Email i Password), Nadir radio API i napisao API kod toggle za login i register, za autentifikaciju.<br>
 13.2.2025-Emir pomogao Nadiru da se instalira Firebase za API, instaliran node.js.<br>
-18.2.2025-Emir dodaje Firebase u Flutter.
+18.2.2025-Emir dodaje i integriše Firebase,dodan i početak aplikacije
 
 # O Aplikaciji 
 Aplikacija Društvena Mreža u koju se treba prijaviti(login), u kojoj se može dopisivat,slati linkovi,lajkati poruke i komentarisati. <br> 
