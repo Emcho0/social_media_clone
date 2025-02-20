@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:social_media_clone/components/button.dart';
 import 'package:social_media_clone/components/text_field.dart';
 
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
+
   const RegisterPage({
     super.key,
     required this.onTap,
@@ -18,6 +20,45 @@ class _RegisterPageState extends State<RegisterPage> {
   final emailTextController = TextEditingController();
   final passwordTextController = TextEditingController();
   final confirmPasswordTextController = TextEditingController();
+
+  // registracija korisnika
+  void displayMessage(String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(message),
+      ),
+    );
+  }
+  void signUp() {
+    // prikazati krug za ucitavanje
+    showDialog(
+      context: context,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+
+    // provjeriti da li su sifre iste
+    if (passwordTextController.text != confirmPasswordTextController.text) {
+      // iskoci loading krug
+      Navigator.pop(context);
+      displayMessage('Šifre se ne poklapaju');
+      return;
+    }
+
+    // pokusati kreirati korisnika
+    try{
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailTextController.text,
+        password: passwordTextController.text,
+      );
+    } on FirebaseAuthException catch (e){
+      Navigator.pop(context);
+      displayMessage(e.code);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 25),
                 // sign up tipka
                 MyButton(
-                  onTap: widget.onTap,
+                  onTap: signUp,
                   text: 'Registruj se',
                 ),
 
