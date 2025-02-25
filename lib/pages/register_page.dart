@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:social_media_clone/components/button.dart';
 import 'package:social_media_clone/components/text_field.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
@@ -78,9 +79,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 // dobrodosli nazad
                 Text(
                   "Dobro došli, hajmo napraviti račun za vas!",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 74, 77, 89), // tsuki0
-                  ),
+                  style: GoogleFonts.geistMono(),
+                  //  TextStyle(
+                  //   color: Color.fromARGB(255, 74, 77, 89), // tsuki0
+                  // ),
+                
                 ),
                 const SizedBox(height: 25),
                 // email polje
