@@ -10,18 +10,19 @@ class LoginOrRegister extends StatefulWidget {
 }
 
 class _LoginOrRegisterState extends State<LoginOrRegister> {
+
+  //initially show the login page
   bool showLoginPage = true;
 
-  // namjestati izmedju login i register ekrana
-  void togglePages() {
+  //toggle between login and register page
+  void togglePages(){
     setState(() {
-      showLoginPage = !showLoginPage;
+      showLoginPage=!showLoginPage;
     });
   }
-
   @override
   Widget build(BuildContext context) {
-    if (showLoginPage){
+    if(showLoginPage){
       return LoginPage(onTap: togglePages);
     }
     else{

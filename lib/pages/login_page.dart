@@ -5,121 +5,138 @@ import 'package:social_media_clone/components/text_field.dart';
 
 class LoginPage extends StatefulWidget {
   final Function()? onTap;
-
-  const LoginPage({
-    super.key,
-    required this.onTap,
-  });
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // kontroleri za uredjivanje (unos) teksta
+  //text editing controller
   final emailTextController = TextEditingController();
   final passwordTextController = TextEditingController();
 
-  // korisnika sign-inovati
+  //sign user in
+
   void signIn() async {
-    showDialog(
-      context: context,
-      builder: (context) => const Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
-    try {
+    //show loading circle
+    showDialog(context: context, builder: (context)=>const Center(
+      child: CircularProgressIndicator(),
+    ));
+
+
+    try{
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailTextController.text,
-        password: passwordTextController.text,
-      );
-      if (context.mounted) {
-        Navigator.pop(context);
-      }
-    } on FirebaseAuthException catch (e) {
-      // iskoci loading krug
+        email: emailTextController.text, password: passwordTextController.text);
+
+
+         //pop loading circle
+    if(context.mounted) Navigator.pop(context);
+    }
+   
+    
+     on FirebaseAuthException catch(e){
+
+      //pop loading circle
       Navigator.pop(context);
+      //display error message
       displayMessage(e.code);
     }
   }
 
-  // display a dialog message
-  void displayMessage(String message) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(message),
-      ),
-    );
+
+  //display a dialog message
+  void displayMessage(String message){
+    showDialog(context: context, builder: (context)=>AlertDialog(
+      title: Text(message),
+    ));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 189, 191, 203), // tsuki3
+      backgroundColor: Colors.lime[300],
       body: SafeArea(
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // logo
-                Icon(
-                  Icons.lock,
-                  size: 100,
-                ),
-                // dobrodosli nazad
-                Text(
-                  "Dobro došli, nedostajali ste nam!",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 74, 77, 89), // tsuki0
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //logo
+                  Icon(
+                    Icons.lock,
+                    size: 100,
                   ),
-                ),
-                const SizedBox(height: 25),
-                // email polje
-                MyTextField(
-                  controller: emailTextController,
-                  hintText: 'Email',
-                  obscureText: false,
-                ),
 
-                const SizedBox(height: 10),
-                // password polje
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  //welcome back message
+                  Text(
+                    "Welcome back, You've been missed",
+                    style: TextStyle(color: Colors.grey[700]),
+                  ),
 
-                MyTextField(
-                  controller: passwordTextController,
-                  hintText: 'Šifra',
-                  obscureText: true,
-                ),
+                  const SizedBox(
+                    height: 25,
+                  ),
 
-                const SizedBox(height: 25),
-                // sign in tipka
-                MyButton(
-                  onTap: signIn,
-                  text: 'Prijavi se',
-                ),
+                  //email textfield
 
-                const SizedBox(height: 25),
-                // idi na registraciju
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Niste član?"),
-                    const SizedBox(width: 4),
-                    GestureDetector(
-                      onTap: widget.onTap,
-                      child: const Text(
-                        "Registrujte se sada",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 66, 96, 138), // umiBlue
-                        ),
+                  MyTextField(
+                      controller: emailTextController,
+                      hintText: 'Email',
+                      obscureText: false),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  //password textfield
+
+                  MyTextField(
+                      controller: passwordTextController,
+                      hintText: 'Password',
+                      obscureText: true),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  //sign in button
+
+                  MyButton(onTap: signIn, text: 'Sign In'),
+
+                  const SizedBox(
+                    height: 25,
+                  ),
+
+                  //go to register page
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Not a Member ?",
+                        style: TextStyle(color: Colors.grey[700]),
                       ),
-                    )
-                  ],
-                )
-              ],
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      GestureDetector(
+                          onTap: widget.onTap,
+                          child: const Text(
+                            "Register Now",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue),
+                          )),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
