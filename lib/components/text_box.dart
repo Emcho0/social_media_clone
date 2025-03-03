@@ -10,7 +10,7 @@ class MyTextBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.lime[200],borderRadius: BorderRadius.circular(8)
+        color: Color.fromARGB(255, 135, 137, 150),borderRadius: BorderRadius.circular(8)
       ),
       padding: EdgeInsets.only(left: 15,bottom: 15),
       margin: EdgeInsets.only(left: 20,right: 20,top: 20),

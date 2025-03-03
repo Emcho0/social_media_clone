@@ -120,7 +120,7 @@ class _WallPostState extends State<WallPost> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 246, 181, 2),
+          color: Color.fromARGB(255, 89, 123, 192),
           borderRadius: BorderRadius.circular(8)),
       margin: EdgeInsets.only(top: 25, left: 25, right: 25),
       padding: EdgeInsets.all(25),
@@ -147,9 +147,9 @@ class _WallPostState extends State<WallPost> {
 
                Row(
             children: [
-              Text(widget.user,style: TextStyle(color: Colors.grey),),
-              Text(" . ",style: TextStyle(color: Colors.grey),),
-              Text(widget.time,style: TextStyle(color: Colors.grey),),
+              Text(widget.user,style: TextStyle(color: Color.fromARGB(255,198,223,236)),),
+              Text(" . ",style: TextStyle(color: Color.fromARGB(255,198,223,236)),),
+              Text(widget.time,style: TextStyle(color: Color.fromARGB(255,198,223,236)),),
             ],
           ),
               
@@ -164,7 +164,6 @@ class _WallPostState extends State<WallPost> {
                     children: [
                       //like button
                       LikeButton(isLiked: isLiked, onTap: toggleLike),
-
                       const SizedBox(
                         height: 5,
                       ),

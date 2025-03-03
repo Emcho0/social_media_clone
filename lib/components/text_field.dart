@@ -22,10 +22,10 @@ class MyTextField extends StatelessWidget {
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.black)
         ),
-        fillColor: Colors.lime.shade200,
+        fillColor: Color.fromARGB(255, 135, 137, 150),
         filled: true,
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.grey[500])
+        hintStyle: TextStyle(color: Color.fromARGB(255, 6,9,14)),
       ),
     );
   }

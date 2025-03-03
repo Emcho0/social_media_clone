@@ -58,10 +58,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime[300],
+      backgroundColor: Color.fromARGB(255, 189, 191, 203),
       appBar: AppBar(
-        title: Text("Social Wall"),
-        backgroundColor: Color.fromARGB(255, 197, 0, 251),
+        title: Text("ĆejfNet"),
+        backgroundColor: Color.fromARGB(255, 135, 137, 150),
         actions: [
           //sign out button
 
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                     child: MyTextField(
                         controller: textController,
-                        hintText: "Write something on the wall...",
+                        hintText: "Write something on the ĆejfNet...",
                         obscureText: false),
                   ),
 
